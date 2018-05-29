@@ -3,7 +3,7 @@ namespace core\model;
 
 class Model{
 
-    //定义连接数据库变量苏醒
+    //定义连接数据库变量属性
     protected static $config;
 
 
