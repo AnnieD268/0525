@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<body>
-<div class="jumbotron" style="text-align: center;">
+<body style="background: #eee;">
+<div class="jumbotron" style="text-align: center;margin-top:100px;">
     <h1><?php echo $msg; ?></h1>
     <p>...</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">点击跳转</a></p>
 </div>
 <script>
     setTimeout(function () {

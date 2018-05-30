@@ -4,7 +4,8 @@ namespace core;
 class Boot{
 
     public function run(){
-
+//        开启session
+        session_start();
 //        分析get参数，如果有get参数s,就分析s参数得到的模块、控制器和方法，如果没有s，就给默认值
         if (isset($_GET['s'])){
 //            如果存在s参数
@@ -19,7 +20,7 @@ class Boot{
         }else{
 //            如果没有s参数
 //            定义模块变量
-            $m = 'home';
+            $m = 'admin';
 //            定义控制器变量
             $c = 'Entry';
 //            定义方法变量

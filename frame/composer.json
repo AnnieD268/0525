@@ -6,7 +6,9 @@
             "email": "1164267045@qq.com"
         }
     ],
-    "require": {},
+    "require": {
+        "gregwar/captcha": "^1.1"
+    },
     "autoload":{
         "psr-4":{
             "core\\":"core",

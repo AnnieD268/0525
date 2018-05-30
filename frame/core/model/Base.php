@@ -22,7 +22,7 @@ class Base{
 //    链接数据库方法
     public function connect($config){
         if (is_null($this -> pdo)){
-            $dsn = 'mysql:host='.$config['host'].';dbname'.$config['dbname'];
+            $dsn = 'mysql:host='.$config['host'].';dbname='.$config['dbname'];
             try{
                 $this -> pdo = new \PDO($dsn,$config['username'],$config['password']);
                 $this -> pdo -> query('set names utf8');
@@ -38,12 +38,12 @@ class Base{
     public function get(){
 
 //        组合sql语句
-        $sql = 'select * from'.$this -> table.self::where();
+        $sql = 'select * from '. $this -> table . self::$where;
 //        通过pdo对象调用query方法获取多条数据
         $result = $this -> pdo -> query($sql);
         $data = $result -> fetchAll(\PDO::FETCH_ASSOC);
 //        将当前$data数据存入当前对象的一个临时属性中
-        $this -> data =$data;
+        $this -> data = $data;
 //        返回当前对象
         return $this;
     }
@@ -53,14 +53,15 @@ class Base{
 //        获取调用表的主键名称
         $priKey = $this -> getPriKey();
 //        组合sql语句
-        $sql = 'select * from'.$this -> table.'where'.$priKey.'='.$pri;
+        $sql = 'select * from ' . $this -> table.' where '.$priKey.' = '.$pri;
+//        p($sql);die;
 //        调用where方法处理where属性
 //        $this->where($priKey . ' = ' . $pri);
 //
 //        $sql = "select * from ".$this->table. self::$where;
 //        通过pdo对象调用query方法获取多条数据
-        $result = $this->pdo->query($sql);
-        $data = $result->fetch(\PDO::FETCH_ASSOC);
+        $result = $this -> pdo -> query($sql);
+        $data = $result -> fetch(\PDO::FETCH_ASSOC);
 //        将当前$data数据存入当前对象的一个临时属性中
         $this->data = $data;
 //        将查找的属性值存入当前属性
@@ -113,7 +114,7 @@ class Base{
 //        循环
         foreach ($data as $k => $v) {
             $keyStr .= $k . ',';
-            $valueStr .= '"'.$v . '",';
+            $valueStr .= '"'. $v . '",';
         }
 //        将最后的逗号去掉
         $keyStr = rtrim($keyStr,',');

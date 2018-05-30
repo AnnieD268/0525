@@ -24,6 +24,14 @@ class ComposerStaticInitc5257cae649944513db82b6e1e502c85
         array (
             'app\\' => 4,
         ),
+        'S' => 
+        array (
+            'Symfony\\Component\\Finder\\' => 25,
+        ),
+        'G' => 
+        array (
+            'Gregwar\\' => 8,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -38,6 +46,14 @@ class ComposerStaticInitc5257cae649944513db82b6e1e502c85
         'app\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
+        ),
+        'Gregwar\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gregwar/captcha/src/Gregwar',
         ),
     );
 
