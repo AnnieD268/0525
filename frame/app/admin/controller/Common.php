@@ -12,7 +12,7 @@ class Common extends Controller{
         if (!isset($_SESSION['username'])){
 
 //            在构造函数中,return没有用,所以这里需要用die
-            die($this -> redirect('index.php?s=admin/login/loginForm') -> message('需要先登录'));
+            die($this -> redirect('index.php?s=admin/login/loginForm') -> message('请先登录'));
         }
     }
 

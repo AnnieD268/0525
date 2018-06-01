@@ -18,7 +18,7 @@
                     ?>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="">注册</a></li>
-                        <li><a href="">登录</a></li>
+                        <li><a href="index.php?s=admin/login/loginForm">登录</a></li>
                     </ul>
                     <?php
                 }

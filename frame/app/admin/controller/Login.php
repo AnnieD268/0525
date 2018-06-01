@@ -31,7 +31,7 @@ class Login extends Controller{
                 $_SESSION['username'] = $userInfo[0]['username'];
                 $_SESSION['uid'] = $userInfo[0]['id'];
 //                登陆成功
-                return $this -> redirect('index.php?s=admin/entry/index') -> message('登陆成功');
+                return $this -> redirect('index.php?s=home/entry/index') -> message('登陆成功');
             }else{
                 return $this -> redirect() -> message('账户或密码输入错误');
             }
@@ -46,7 +46,7 @@ class Login extends Controller{
         session_unset();
         session_destroy();
 //        跳转去后台登录
-        return $this -> redirect('index.php?s=admin/login/loginForm') -> message('退出成功');
+        return $this -> redirect('index.php') -> message('退出成功');
     }
 
     /**

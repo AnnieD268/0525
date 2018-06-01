@@ -45,7 +45,7 @@
                         <td>
                             <div class="btn-group">
                                 <a href="index.php?s=admin/stu/edit&id=<?php echo $v['id']; ?>" class="btn btn-primary">编辑</a>
-                                <a href="javascript:;"
+                                <a href="javascript:;" onclick="del(<?php echo $v['id']; ?>)"
                                    class="btn btn-danger">删除</a>
                             </div>
                         </td>
@@ -65,7 +65,7 @@
         // }
 
         function del(id) {
-            if (confirm('确定删除该班级数据吗?')) {
+            if (confirm('确定删除该学生列表数据吗?')) {
                 //如果确定要删除,发送ajax
                 $.ajax({
                     url:'index.php?s=admin/stu/ajaxDelete&id=' + id,

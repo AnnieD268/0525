@@ -54,7 +54,6 @@ class Base{
         $priKey = $this -> getPriKey();
 //        组合sql语句
         $sql = 'select * from ' . $this -> table.' where '.$priKey.' = '.$pri;
-//        p($sql);die;
 //        调用where方法处理where属性
 //        $this->where($priKey . ' = ' . $pri);
 //

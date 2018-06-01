@@ -20,7 +20,7 @@ class Boot{
         }else{
 //            如果没有s参数
 //            定义模块变量
-            $m = 'admin';
+            $m = 'home';
 //            定义控制器变量
             $c = 'Entry';
 //            定义方法变量

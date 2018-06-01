@@ -56,27 +56,27 @@
     },
     {
         "name": "symfony/finder",
-        "version": "v4.0.11",
-        "version_normalized": "4.0.11.0",
+        "version": "v4.1.0",
+        "version_normalized": "4.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/finder.git",
-            "reference": "8c633f5a815903a1fe6e3fc135f207267a8a79af"
+            "reference": "087e2ee0d74464a4c6baac4e90417db7477dc238"
         },
         "dist": {
             "type": "zip",
-            "url": "https://files.phpcomposer.com/files/symfony/finder/8c633f5a815903a1fe6e3fc135f207267a8a79af.zip",
-            "reference": "8c633f5a815903a1fe6e3fc135f207267a8a79af",
+            "url": "https://files.phpcomposer.com/files/symfony/finder/087e2ee0d74464a4c6baac4e90417db7477dc238.zip",
+            "reference": "087e2ee0d74464a4c6baac4e90417db7477dc238",
             "shasum": ""
         },
         "require": {
             "php": "^7.1.3"
         },
-        "time": "2018-05-16T09:05:32+00:00",
+        "time": "2018-05-16T14:33:22+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "4.0-dev"
+                "dev-master": "4.1-dev"
             }
         },
         "installation-source": "dist",

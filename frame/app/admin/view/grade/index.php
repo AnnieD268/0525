@@ -36,7 +36,7 @@
                     <tr>
                         <td><?php echo $k + 1; ?></td>
                         <td><?php echo $v['gname']; ?></td>
-                        <td>19</td>
+                        <td><?php echo $v['c']; ?>人</td>
                         <td>
                             <div class="btn-group">
                                 <a href="index.php?s=admin/grade/edit&id=<?php echo $v['id']; ?>" class="btn btn-primary">编辑</a>

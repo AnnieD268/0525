@@ -44,7 +44,7 @@
                                     <input type="radio" name="sex" value="女" <?php if ($stu['sex'] == '女'){ ?> checked="checked" <?php } ?>> 女
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="sex" value="保密" <?php if ($stu['sex'] == '不详'){ ?> checked="checked" <?php } ?>> 保密
+                                    <input type="radio" name="sex" value="保密" <?php if ($stu['sex'] == '保密'){ ?> checked="checked" <?php } ?>> 保密
                                 </label>
                             </div>
                         </div>

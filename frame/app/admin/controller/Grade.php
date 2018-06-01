@@ -10,7 +10,10 @@ class Grade extends Common{
 //    班级列表方法
     public function index(){
 //        获取班级表中的所有数据
-        $data = g::get() -> toArray();
+//        $data = g::get() -> toArray();
+//        重新组合sql语句，找到学生所在班级数据
+        $sql = "select grade.*,count(stu.name) as c from stu right join grade on stu.gid = grade.id group by grade.id";
+        $data  = g::query($sql) -> toArray();
 //        加载班级表模板
         return View::make() -> with('grade',$data);
     }
@@ -47,16 +50,23 @@ class Grade extends Common{
         if ($_POST){
 //            获取post 数据
             $post = $_POST;
+//            编辑值钱判断是否有当前名称的班级名称，如果有，提示并返回
+//            组合语句时要排除当前选择的班级名称
+            $g = g::where('gname = "' . $post['gname'] . '" and id != ' . $id) -> get() -> toArray();
+            if ($g){
+                return $this -> redirect() -> message('该班级已存在，请勿重复');
+            }
 //            调用框架的edit方法来修改数据
             $result = g::edit($post);
 //        判断结果是否为真，为真返回成功，为假返回失败
-            if ($result){
+//            $result !== false为了确保不修改原来数据的情况下也能返回编辑成功的提示语
+            if ($result !== false){
                 return $this -> redirect('index.php?s=admin/grade/index') -> message('编辑成功');
             }else{
                 return $this -> redirect() -> message('编辑失败');
             }
         }
-//        加载编辑学生模板，分配修改的数据
+//        加载编辑班级模板，分配修改的数据
         return View::make() -> with('gname',$gname);
     }
 

@@ -14,7 +14,7 @@
 <div class="jumbotron" style="text-align: center;margin-top:100px;">
     <h1><?php echo $msg; ?></h1>
     <p>...</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">点击跳转</a></p>
+    <p><a class="btn btn-primary btn-lg" href="index.php?s=admin/login/loginForm" role="button">如果跳转失败，请点击这里</a></p>
 </div>
 <script>
     setTimeout(function () {

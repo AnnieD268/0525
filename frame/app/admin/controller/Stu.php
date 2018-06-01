@@ -67,10 +67,13 @@ class Stu extends Common{
 
 //    删除学生数据
     public function delete(){
+//        获取所有班级数据并分配
+        $grade = Grade::get() -> toArray();
 //        获取需要删除的学生id
         $id = $_GET['id'];
 //            调用框架的delete方法来修改数据
         $result = s::delete($id);
+
 //        判断结果是否为真，为真返回成功，为假返回失败
         if ($result){
             return $this -> redirect('index.php?s=admin/stu/index') -> message('删除成功');
@@ -80,6 +83,24 @@ class Stu extends Common{
 
 
     }
+
+    public function ajaxDelete(){
+//        获取需要删除的学生列表id
+        $id = $_GET['id'];
+//        删除对应id
+        $result = s::delete($id);
+//        判断$result返回结果是否为真,来返回给前台不同的处理结果
+        if ($result){
+//            如果为真,代表删除成功
+            return json_encode(['valid' => 1,'message' => '学生数据删除成功']);
+        }else{
+//            如果为假,代表删除失败
+            return json_encode(['valid' => 0,'message' => '学生数据删除失败']);
+        }
+    }
+
+
+
 
 
 

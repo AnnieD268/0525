@@ -18,7 +18,7 @@
         <div class="col-lg-9">
             <!-- TAB NAVIGATION -->
             <ul class="nav nav-tabs" role="tablist">
-                <li><a href="index.php?s=admin/view/grade/index.php?s=admin/grade/index">grade list</a></li>
+                <li><a href="index.php?s=admin/grade/index">grade list</a></li>
                 <li class="active"><a href="index.php?s=admin/grade/create">edit grade</a></li>
             </ul>
             <div class="panel panel-default">
